@@ -349,7 +349,7 @@
       border-radius: 28px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 44% 42%, rgba(255, 255, 255, 0.23), transparent 17rem),
+        radial-gradient(circle at 50% 46%, rgba(221, 244, 255, 0.28), transparent 16rem),
         linear-gradient(135deg, #173B5D 0%, #17243C 48%, #514776 100%);
       border: 1px solid rgba(255, 255, 255, 0.16);
       display: grid;
@@ -377,16 +377,17 @@
     .hero-sd-initials {
       position: relative;
       z-index: 2;
-      font-size: clamp(5rem, 10vw, 8.8rem);
+      font-size: clamp(6.2rem, 12vw, 10.8rem);
       font-weight: 1000;
       letter-spacing: -0.13em;
-      margin-left: -22px;
+      margin-left: -24px;
       line-height: 1;
-      background: linear-gradient(135deg, #DDF4FF, #BFD5FF);
+      background: linear-gradient(135deg, #F2FBFF, #BFE2FF 45%, #D7E5FF);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      text-shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+      filter: drop-shadow(0 0 18px rgba(221, 244, 255, 0.22));
     }
 
     .hero-sd-float {
@@ -423,8 +424,9 @@
     }
 
     .hero-sd-float.program {
-      top: 205px;
+      top: 38px;
       right: 28px;
+      max-width: 250px;
     }
 
     .hero-sd-float.ai {
@@ -1016,7 +1018,8 @@
 
       .hero-sd-initials {
         text-align: center;
-        margin: 34px 0;
+        margin: 46px 0;
+        font-size: clamp(6.4rem, 28vw, 9rem);
       }
 
       .hero-sd-inner::before {
@@ -1336,7 +1339,7 @@
             <p>Career growth, leadership, AI adoption, communication and professional visibility content.</p>
           </a>
 
-          <a class="card" href="https://youtube.com/@voiceelevatorcommunity" target="_blank" rel="noopener">
+          <a class="card" href="https://www.youtube.com/@SubhankarVoiceElevator/" target="_blank" rel="noopener">
             <div class="icon">▶</div>
             <h3>YouTube</h3>
             <p>Practical videos, coaching lessons, AI education and professional development content.</p>
@@ -1421,7 +1424,7 @@
 
       <div class="socials">
         <a href="https://www.linkedin.com/in/subhankardeyy" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://youtube.com/@voiceelevatorcommunity" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.youtube.com/@SubhankarVoiceElevator/" target="_blank" rel="noopener">YouTube</a>
         <a href="https://subhankardeyve.substack.com" target="_blank" rel="noopener">Substack</a>
         <a href="https://chat.whatsapp.com/JolirOUZynIFfqveS4nAHf" target="_blank" rel="noopener">WhatsApp</a>
       </div>
@@ -1434,33 +1437,38 @@
         <div>
           <div class="eyebrow">Discovery Call Form</div>
           <h2 id="modalTitle" style="font-size: clamp(1.7rem, 3vw, 2.45rem); margin-bottom: 0;">Tell me what you want to solve</h2>
-          <p>This form captures your details and opens an email draft to Subhankar with your responses.</p>
+          <p>Submit your details here and they will be sent to Subhankar for review.</p>
         </div>
         <button class="close-modal" id="closeModal" type="button" aria-label="Close form">×</button>
       </div>
 
-      <form class="lead-form" id="leadForm">
+      <form class="lead-form" id="leadForm" action="https://formsubmit.co/subhankar.dey4u@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Discovery Call Request from Landing Page" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="Landing Page URL" id="landingPageUrl" value="" />
+        <input type="hidden" name="Submitted At" id="submittedAt" value="" />
         <div class="form-row">
           <label>
             Name *
-            <input type="text" id="leadName" placeholder="Your full name" required />
+            <input type="text" id="leadName" name="Name" placeholder="Your full name" required />
           </label>
 
           <label>
             Contact Number *
-            <input type="tel" id="leadPhone" placeholder="+91 99999 99999" required />
+            <input type="tel" id="leadPhone" name="Contact Number" placeholder="+91 99999 99999" required />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             Email ID *
-            <input type="email" id="leadEmail" placeholder="you@example.com" required />
+            <input type="email" id="leadEmail" name="Email ID" placeholder="you@example.com" required />
           </label>
 
           <label>
             Purpose of the Call *
-            <select id="leadPurpose" required>
+            <select id="leadPurpose" name="Purpose of the Call" required>
               <option value="">Select one</option>
               <option>Career Growth Coaching</option>
               <option>Communication Coaching</option>
@@ -1476,12 +1484,12 @@
 
         <label>
           What problem do you want to solve? *
-          <textarea id="leadProblem" placeholder="Example: I want to improve my communication in leadership meetings, prepare for promotion, use AI better at work, or transition into program management..." required></textarea>
+          <textarea id="leadProblem" name="Problem to Solve" placeholder="Example: I want to improve my communication in leadership meetings, prepare for promotion, use AI better at work, or transition into program management..." required></textarea>
         </label>
 
         <label>
           How did you come to this landing page? *
-          <select id="leadSource" required>
+          <select id="leadSource" name="How They Came To This Landing Page" required>
             <option value="">Select source</option>
             <option>LinkedIn</option>
             <option>YouTube</option>
@@ -1495,9 +1503,9 @@
           </select>
         </label>
 
-        <button class="btn btn-primary" type="submit">Submit Details by Email →</button>
+        <button class="btn btn-primary" type="submit">Submit Discovery Call Request →</button>
         <div class="success-message" id="successMessage">
-          Your details are ready in an email draft. Please click send in your email app.
+          Submitting your details securely. Please wait...
         </div>
       </form>
     </div>
@@ -1506,7 +1514,6 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script>
-    const CONTACT_EMAIL = "subhankar.dey4u@gmail.com";
     const mobileToggle = document.getElementById("mobileToggle");
     const navLinks = document.getElementById("navLinks");
     const backToTop = document.getElementById("backToTop");
@@ -1563,49 +1570,10 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    leadForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const lead = {
-        name: document.getElementById("leadName").value.trim(),
-        phone: document.getElementById("leadPhone").value.trim(),
-        email: document.getElementById("leadEmail").value.trim(),
-        purpose: document.getElementById("leadPurpose").value,
-        problem: document.getElementById("leadProblem").value.trim(),
-        source: document.getElementById("leadSource").value,
-        page: window.location.href,
-        submittedAt: new Date().toLocaleString()
-      };
-
-      const subject = encodeURIComponent("Discovery Call Request from Landing Page");
-      const body = encodeURIComponent(
-`Hi Subhankar,
-
-I would like to book a discovery call.
-
-Name: ${lead.name}
-Contact Number: ${lead.phone}
-Email ID: ${lead.email}
-Purpose of the Call: ${lead.purpose}
-
-What problem I want to solve:
-${lead.problem}
-
-How I came to this landing page:
-${lead.source}
-
-Landing page:
-${lead.page}
-
-Submitted at:
-${lead.submittedAt}
-
-Regards,
-${lead.name}`
-      );
-
+    leadForm.addEventListener("submit", function() {
+      document.getElementById("landingPageUrl").value = window.location.href;
+      document.getElementById("submittedAt").value = new Date().toLocaleString();
       successMessage.classList.add("show");
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     });
   </script>
 </body>
